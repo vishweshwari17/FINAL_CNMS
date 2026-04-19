@@ -1,0 +1,668 @@
+INFO:     Started server process [99710]
+INFO:     Waiting for application startup.
+2026-04-09 11:34:33,659 [INFO] cnms.main: Starting CNMS backend...
+2026-04-09 11:34:33,660 [INFO] cnms.db: [DB] Pool initialised via Unix socket
+2026-04-09 11:34:33,661 [INFO] cnms.main: [DB] Pool ready
+2026-04-09 11:34:33,661 [INFO] cnms.dual_sync: [DualPoller] Started — interval 60s
+2026-04-09 11:34:33,661 [INFO] cnms.main: [DualPoller] Both LNMS sync started
+2026-04-09 11:34:33,661 [INFO] cnms.sla_manager: [SLAManager] Started SLA tracking loop
+2026-04-09 11:34:33,661 [INFO] cnms.main: [TCP] Server started on 7776
+2026-04-09 11:34:33,661 [INFO] cnms.dual_sync: [DualPoller] Sync cycle starting...
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+2026-04-09 11:34:33,994 [INFO] cnms.dual_sync: [LOCAL] Connected to lnms_db ✓
+2026-04-09 11:34:34,181 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438490000001c19 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:34,716 [INFO] cnms.dual_sync: [COMPANY] Connected via SSH ✓  alarms=197
+2026-04-09 11:34:34,867 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043848000000fda8 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:35,411 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043848000000fa79 (ICMP) exceeded SLA. Escalated to Critical priority.
+INFO:     ('127.0.0.1', 56574) - "WebSocket /ws/alarms" [accepted]
+2026-04-09 11:34:35,578 [INFO] cnms.main: [WS] Accepted connection from Address(host='127.0.0.1', port=56574) (Origin: http://localhost:3000)
+2026-04-09 11:34:35,578 [INFO] cnms.ws: [WS] Client added to manager. Total: 1
+INFO:     connection open
+INFO:     ('127.0.0.1', 56584) - "WebSocket /ws/alarms" [accepted]
+2026-04-09 11:34:36,529 [INFO] cnms.main: [WS] Accepted connection from Address(host='127.0.0.1', port=56584) (Origin: http://localhost:3000)
+2026-04-09 11:34:36,529 [INFO] cnms.ws: [WS] Client added to manager. Total: 2
+INFO:     connection open
+2026-04-09 11:34:36,672 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043754000000c09d (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:37,468 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043753000000e692 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:38,013 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043921000000d7a2 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:38,621 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060454290000008692 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:39,364 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060537350000003d95 (SNMP) exceeded SLA. Escalated to Critical priority.
+INFO:     127.0.0.1:56600 - "GET /sla/risk HTTP/1.1" 200 OK
+2026-04-09 11:34:39,838 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406053832000000bb64 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:40,544 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406053856000000640c (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:41,488 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060540020000005ea3 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:42,168 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060600190000008ecc (SNMP) exceeded SLA. Escalated to Critical priority.
+INFO:     127.0.0.1:56616 - "OPTIONS /dashboard/incident-stats HTTP/1.1" 200 OK
+2026-04-09 11:34:42,981 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406060929000000c2d0 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:43,680 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060611030000007859 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:44,287 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060610440000003fe6 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:44,868 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406063115000000ada8 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:45,315 [INFO] cnms.dual_sync: [LOCAL] Synced 33 alarms, 30 tickets
+2026-04-09 11:34:45,316 [INFO] cnms.dual_sync: [LOCAL] Performing full deletion sync for LNMS-LOCAL-01...
+2026-04-09 11:34:45,475 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040607064000000055e1 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:45,965 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060706400000004f31 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:46,564 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406095946000000d506 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:47,013 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959450000008338 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:47,582 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959450000002524 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:48,029 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959440000004e14 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:48,796 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959430000009c23 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:49,236 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket LOCAL-ALM-38 (Packet Loss) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:49,776 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406103653000000f70c (High CPU Usage) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:50,330 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604061054023289795bf1 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:51,019 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604061054043769998f5d (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:51,785 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604061059389611571673 (High CPU Usage) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:52,895 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604061059403140466b7c (Packet Loss) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:53,682 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406110255395706dc49 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:54,281 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406110421000000d68d (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:54,817 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406113101000000c946 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:55,170 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406113527528650d5d1 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:55,569 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407042348920765a41e (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:55,984 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040704405559949559d3 (SNMP) exceeded SLA. Escalated to Critical priority.
+INFO:     127.0.0.1:56726 - "GET /sla/risk HTTP/1.1" 200 OK
+2026-04-09 11:34:56,462 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070440556738382dfd (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:57,472 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407044303448172bafc (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:58,062 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070446211235158ae6 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:58,690 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070449433113938199 (High CPU Usage) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:34:59,951 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407044943501937bc9a (Packet Loss) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:00,419 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040704504808744715ed (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:00,968 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407045048162245b069 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:01,459 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604071022430000008178 (Hardware issues) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:01,932 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407045610765165810d (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:02,357 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070509458976805ac4 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:02,784 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407050946116543aea7 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:03,116 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040706020803934129b4 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:04,177 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070613510692368016 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:04,759 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407062334874431520e (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:06,265 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070840360000000b05 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:07,616 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070840360000004848 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:08,027 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407084035000000d2b3 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:08,508 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070840350000005937 (SNMP) exceeded SLA. Escalated to Critical priority.
+INFO:     127.0.0.1:56866 - "GET /sla/risk HTTP/1.1" 200 OK
+2026-04-09 11:35:08,924 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070844335829887a7b (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:09,306 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070846428370274d95 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:10,112 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407145616000000b5dc (Hardware issues) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:11,028 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407092912618962a030 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:11,694 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080358224542848cc6 (Link Failure) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:12,443 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408035823494353e182 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:12,578 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040803582371457001b6 (Temperature Warning) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:12,807 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080358244996389c3b (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:13,375 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408035824602799bc53 (Packet Loss) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:13,760 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080358253220681bb4 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:14,186 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408035825948843e99e (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:14,815 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408035826429591f26f (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:15,343 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080358274221076f2f (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:15,930 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080427026459570852 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:16,365 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408102431000000a499 (Hardware issues) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:16,778 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408052109302408c6a7 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:17,246 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408092939394184c244 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:35:18,813 [INFO] cnms.ws: [WS] Client disconnected. Total: 1
+INFO:     connection closed
+INFO:     127.0.0.1:56956 - "GET /major-incidents/ HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 56958) - "WebSocket /ws/alarms" [accepted]
+2026-04-09 11:35:18,831 [INFO] cnms.main: [WS] Accepted connection from Address(host='127.0.0.1', port=56958) (Origin: http://localhost:3000)
+2026-04-09 11:35:18,831 [INFO] cnms.ws: [WS] Client added to manager. Total: 2
+INFO:     connection open
+INFO:     127.0.0.1:56964 - "GET /major-incidents/ HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 57016) - "WebSocket /ws/alarms" [accepted]
+2026-04-09 11:35:21,822 [INFO] cnms.main: [WS] Accepted connection from Address(host='127.0.0.1', port=57016) (Origin: http://localhost:3000)
+2026-04-09 11:35:21,822 [INFO] cnms.ws: [WS] Client added to manager. Total: 3
+INFO:     connection open
+2026-04-09 11:35:31,796 [INFO] cnms.dual_sync: [COMPANY] Synced 197 alarms, 173 tickets
+2026-04-09 11:35:31,797 [INFO] cnms.dual_sync: [COMPANY] Performing full deletion sync for LNMS-COMPANY-01...
+2026-04-09 11:35:43,750 [INFO] cnms.dual_sync: [DualPoller] Sync cycle complete.
+INFO:     127.0.0.1:57218 - "GET /major-incidents/ HTTP/1.1" 200 OK
+2026-04-09 11:36:17,936 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 2 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:18,471 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 73 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:18,922 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 74 (SNMP) exceeded SLA. Escalated to Critical priority.
+INFO:     127.0.0.1:57478 - "GET /major-incidents/ HTTP/1.1" 200 OK
+2026-04-09 11:36:19,914 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-61 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:20,663 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-62 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:21,745 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-63 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:22,468 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-64 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:23,074 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-65 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:24,934 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 68 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:25,443 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 69 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:25,932 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 70 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:26,244 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 71 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:27,018 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-53 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:27,488 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-54 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:28,239 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-55 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:28,605 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-56 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:28,715 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-57 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:28,870 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-58 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:29,738 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-59 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:30,479 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-60 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:31,014 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-46 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:31,373 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-47 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:32,896 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-48 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:33,502 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 51 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:33,939 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-50 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:34,149 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-51 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:34,575 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-52 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:34,918 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-37 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:35,073 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-38 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:35,267 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-39 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:35,451 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-40 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:36,995 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-42 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:37,664 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-43 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:37,914 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-44 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:38,374 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-45 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:39,374 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 33 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:39,989 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 34 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:40,247 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 36 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:40,563 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 37 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:40,972 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 38 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:41,546 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 39 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:43,370 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 26 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:43,751 [INFO] cnms.dual_sync: [DualPoller] Sync cycle starting...
+2026-04-09 11:36:43,812 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 27 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:43,936 [INFO] cnms.dual_sync: [LOCAL] Connected to lnms_db ✓
+2026-04-09 11:36:44,415 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 28 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:45,293 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 29 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:46,855 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 30 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:47,932 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 31 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:48,498 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 32 (ICMP) exceeded SLA. Escalated to Critical priority.
+INFO:     127.0.0.1:57704 - "GET /major-incidents/ HTTP/1.1" 200 OK
+2026-04-09 11:36:50,429 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 21 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:51,770 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 22 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:52,849 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 23 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:53,501 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 24 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:55,059 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 25 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:55,585 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 13 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:56,341 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 14 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:56,933 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 15 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:57,897 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 16 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:58,655 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 17 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:36:58,897 [INFO] cnms.dual_sync: [LOCAL] Synced 33 alarms, 30 tickets
+2026-04-09 11:36:58,898 [INFO] cnms.dual_sync: [LOCAL] Performing full deletion sync for LNMS-LOCAL-01...
+2026-04-09 11:36:59,512 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 18 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:00,637 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 10 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:01,327 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 11 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:02,155 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 12 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:03,026 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 9 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:03,664 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 7 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:04,608 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 8 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:05,199 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 5 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:06,547 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 6 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:07,897 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 4 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:08,396 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040214553900000074e8 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:09,585 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043906000000b0e0 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:10,069 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000003973 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:10,968 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000009481 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:11,933 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043850000000cafb (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:12,501 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043850000000f590 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:13,699 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043850000000180d (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:14,152 [ERROR] cnms.dual_sync: [COMPANY] SSH query error: Command '['ssh', '-i', '/home/nms/.ssh/cnms_id_rsa', '-o', 'StrictHostKeyChecking=no', '-o', 'ConnectTimeout=10', 'nms@192.78.10.111', 'mariadb -ucnms_reader -pcnms1234 snmp_monitor -B -e "SET time_zone = \'+05:30\'; SELECT COUNT(*) as cnt FROM status_alarms"']' timed out after 30 seconds
+2026-04-09 11:37:14,489 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000001b18 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:14,490 [INFO] cnms.dual_sync: [DualPoller] Sync cycle complete.
+2026-04-09 11:37:15,580 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000009464 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:16,446 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000009d89 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:17,161 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040604384900000070ac (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:17,795 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438490000001c19 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:18,786 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043848000000fda8 (ICMP) exceeded SLA. Escalated to Critical priority.
+INFO:     127.0.0.1:57936 - "GET /major-incidents/ HTTP/1.1" 200 OK
+2026-04-09 11:37:19,401 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043848000000fa79 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:20,204 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043754000000c09d (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:20,526 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043753000000e692 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:21,675 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043921000000d7a2 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:22,282 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060454290000008692 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:23,324 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060537350000003d95 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:25,399 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406053832000000bb64 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:26,937 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406053856000000640c (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:28,260 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060540020000005ea3 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:30,059 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060600190000008ecc (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:31,117 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406060929000000c2d0 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:31,657 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060611030000007859 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:32,689 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060610440000003fe6 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:33,613 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406063115000000ada8 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:34,429 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040607064000000055e1 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:35,503 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060706400000004f31 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:36,461 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406095946000000d506 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:37,162 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959450000008338 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:37,860 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959450000002524 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:38,417 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959440000004e14 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:39,716 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959430000009c23 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:40,332 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604061054023289795bf1 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:41,082 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604061054043769998f5d (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:41,881 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406110255395706dc49 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:42,319 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406110421000000d68d (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:43,529 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406113101000000c946 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:37:44,178 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406113527528650d5d1 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:38:14,491 [INFO] cnms.dual_sync: [DualPoller] Sync cycle starting...
+2026-04-09 11:38:14,691 [INFO] cnms.dual_sync: [LOCAL] Connected to lnms_db ✓
+2026-04-09 11:38:28,245 [INFO] cnms.dual_sync: [LOCAL] Synced 33 alarms, 30 tickets
+2026-04-09 11:38:28,247 [INFO] cnms.dual_sync: [LOCAL] Performing full deletion sync for LNMS-LOCAL-01...
+2026-04-09 11:38:28,936 [INFO] cnms.dual_sync: [COMPANY] Connected via SSH ✓  alarms=197
+INFO:     127.0.0.1:58428 - "GET /major-incidents/ HTTP/1.1" 200 OK
+2026-04-09 11:38:44,944 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket LOCAL-ALM-38 (Packet Loss) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:38:45,367 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406103653000000f70c (High CPU Usage) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:38:46,411 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604061059389611571673 (High CPU Usage) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:38:47,352 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604061059403140466b7c (Packet Loss) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:38:47,929 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070449433113938199 (High CPU Usage) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:38:48,315 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407044943501937bc9a (Packet Loss) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:38:48,766 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080358224542848cc6 (Link Failure) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:38:49,176 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040803582371457001b6 (Temperature Warning) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:38:49,666 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408035824602799bc53 (Packet Loss) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:19,044 [INFO] cnms.dual_sync: [COMPANY] Synced 197 alarms, 173 tickets
+2026-04-09 11:39:19,045 [INFO] cnms.dual_sync: [COMPANY] Performing full deletion sync for LNMS-COMPANY-01...
+2026-04-09 11:39:21,805 [INFO] cnms.dual_sync: [DualPoller] Sync cycle complete.
+INFO:     127.0.0.1:58828 - "GET /major-incidents/ HTTP/1.1" 200 OK
+2026-04-09 11:39:50,023 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 2 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:50,223 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 73 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:50,357 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 74 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:50,557 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-61 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:50,749 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-62 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:50,932 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-63 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:51,114 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-64 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:51,248 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-65 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:51,374 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 68 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:51,424 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 69 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:51,590 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 70 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:51,674 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 71 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:51,708 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-53 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:52,007 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-54 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:52,258 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-55 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:52,673 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-56 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:52,982 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-57 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:53,350 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-58 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:53,657 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-59 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:53,932 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-60 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:54,255 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-46 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:54,582 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-47 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:54,999 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-48 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:55,272 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 51 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:55,448 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-50 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:55,611 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-51 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:55,811 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-52 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:55,994 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-37 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:56,085 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-38 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:56,227 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-39 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:56,419 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-40 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:56,545 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-42 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:56,770 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-43 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:56,901 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-44 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:57,072 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-45 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:57,205 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 33 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:57,835 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 34 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:58,021 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 36 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:58,221 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 37 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:58,471 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 38 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:58,739 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 39 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:58,981 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 26 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:59,213 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 27 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:59,396 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 28 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:59,596 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 29 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:59,787 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 30 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:39:59,988 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 31 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:00,317 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 32 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:00,393 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 21 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:00,566 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 22 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:00,675 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 23 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:00,749 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 24 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:00,983 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 25 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:01,109 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 13 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:01,292 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 14 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:01,517 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 15 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:01,643 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 16 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:01,767 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 17 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:01,967 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 18 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:02,142 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 10 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:02,326 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 11 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:02,688 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 12 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:02,846 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 9 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:02,989 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 7 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:03,180 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 8 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:03,372 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 5 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:03,613 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 6 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:03,789 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 4 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:03,922 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040214553900000074e8 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:04,047 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043906000000b0e0 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:04,338 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000003973 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:04,605 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000009481 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:04,986 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043850000000cafb (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:05,180 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043850000000f590 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:05,496 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043850000000180d (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:05,813 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000001b18 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:06,194 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000009464 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:06,447 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000009d89 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:06,613 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040604384900000070ac (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:06,846 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438490000001c19 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:07,176 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043848000000fda8 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:07,412 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043848000000fa79 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:07,607 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043754000000c09d (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:07,900 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043753000000e692 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:08,026 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043921000000d7a2 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:08,416 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060454290000008692 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:08,712 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060537350000003d95 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:08,905 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406053832000000bb64 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:09,139 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406053856000000640c (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:09,374 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060540020000005ea3 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:09,484 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060600190000008ecc (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:09,710 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406060929000000c2d0 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:10,165 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060611030000007859 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:10,512 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060610440000003fe6 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:10,771 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406063115000000ada8 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:11,156 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040607064000000055e1 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:11,498 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060706400000004f31 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:11,875 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406095946000000d506 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:12,229 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959450000008338 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:12,538 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959450000002524 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:12,772 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959440000004e14 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:13,089 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959430000009c23 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:13,374 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604061054023289795bf1 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:13,828 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604061054043769998f5d (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:14,026 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406110255395706dc49 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:14,285 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406110421000000d68d (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:14,603 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406113101000000c946 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:15,129 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406113527528650d5d1 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:15,464 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407042348920765a41e (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:15,915 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040704405559949559d3 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:16,350 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070440556738382dfd (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:16,625 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407044303448172bafc (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:16,777 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070446211235158ae6 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:16,969 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040704504808744715ed (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:17,096 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407045048162245b069 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:17,230 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604071022430000008178 (Hardware issues) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:17,348 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407045610765165810d (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:17,550 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070509458976805ac4 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:17,734 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407050946116543aea7 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:17,869 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040706020803934129b4 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:17,937 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070613510692368016 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:18,130 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407062334874431520e (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:18,348 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070840360000000b05 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:18,532 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070840360000004848 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:18,659 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407084035000000d2b3 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:18,852 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070840350000005937 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:18,953 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070844335829887a7b (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:19,148 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070846428370274d95 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:19,357 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407145616000000b5dc (Hardware issues) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:19,567 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407092912618962a030 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:19,693 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408035823494353e182 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:19,836 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080358244996389c3b (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:19,938 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080358253220681bb4 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:20,081 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408035825948843e99e (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:20,282 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408035826429591f26f (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:20,400 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080358274221076f2f (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:20,501 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080427026459570852 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:20,702 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408102431000000a499 (Hardware issues) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:20,820 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408052109302408c6a7 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:21,013 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408092939394184c244 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:40:21,805 [INFO] cnms.dual_sync: [DualPoller] Sync cycle starting...
+2026-04-09 11:40:22,025 [INFO] cnms.dual_sync: [LOCAL] Connected to lnms_db ✓
+2026-04-09 11:40:22,166 [INFO] cnms.dual_sync: [COMPANY] Connected via SSH ✓  alarms=197
+2026-04-09 11:40:27,053 [INFO] cnms.dual_sync: [LOCAL] Synced 33 alarms, 30 tickets
+2026-04-09 11:40:27,054 [INFO] cnms.dual_sync: [LOCAL] Performing full deletion sync for LNMS-LOCAL-01...
+INFO:     127.0.0.1:59242 - "GET /major-incidents/ HTTP/1.1" 200 OK
+2026-04-09 11:40:42,423 [INFO] cnms.dual_sync: [COMPANY] Synced 197 alarms, 173 tickets
+2026-04-09 11:40:42,424 [INFO] cnms.dual_sync: [COMPANY] Performing full deletion sync for LNMS-COMPANY-01...
+2026-04-09 11:40:43,852 [INFO] cnms.dual_sync: [DualPoller] Sync cycle complete.
+2026-04-09 11:41:21,505 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 2 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:21,827 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 73 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:22,296 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 74 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:22,724 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-61 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:23,151 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-62 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:23,541 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-63 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:24,544 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-64 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:25,535 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-65 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:26,759 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 68 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:27,445 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 69 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:27,905 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 70 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:28,283 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 71 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:28,573 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-53 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:29,109 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-54 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:29,470 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-55 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:31,285 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-56 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:31,666 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-57 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:32,137 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-58 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:32,458 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-59 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:32,857 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-60 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:33,446 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-46 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:33,733 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-47 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:34,295 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-48 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:34,503 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 51 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:35,045 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-50 (SNMP) exceeded SLA. Escalated to Critical priority.
+INFO:     127.0.0.1:59662 - "GET /major-incidents/ HTTP/1.1" 200 OK
+2026-04-09 11:41:35,774 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-51 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:36,111 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-52 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:36,570 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-37 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:37,145 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-38 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:37,762 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-39 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:38,507 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-40 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:39,380 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-42 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:40,038 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-43 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:40,786 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-44 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:41,547 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-45 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:42,173 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 33 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:42,593 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 34 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:43,001 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 36 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:43,226 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 37 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:43,537 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 38 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:43,793 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 39 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:43,852 [INFO] cnms.dual_sync: [DualPoller] Sync cycle starting...
+2026-04-09 11:41:44,197 [INFO] cnms.dual_sync: [LOCAL] Connected to lnms_db ✓
+2026-04-09 11:41:44,350 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 26 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:45,522 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 27 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:45,894 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 28 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:46,502 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 29 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:47,131 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 30 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:47,781 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 31 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:48,168 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 32 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:48,883 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 21 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:49,535 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 22 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:50,270 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 23 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:50,809 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 24 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:50,986 [INFO] cnms.dual_sync: [COMPANY] Connected via SSH ✓  alarms=197
+2026-04-09 11:41:51,469 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 25 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:51,938 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 13 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:52,546 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 14 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:53,333 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 15 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:53,958 [INFO] cnms.dual_sync: [LOCAL] Synced 33 alarms, 30 tickets
+2026-04-09 11:41:53,958 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 16 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:53,959 [INFO] cnms.dual_sync: [LOCAL] Performing full deletion sync for LNMS-LOCAL-01...
+2026-04-09 11:41:54,484 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 17 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:55,029 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 18 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:55,823 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 10 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:56,319 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 11 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:57,241 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 12 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:57,780 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 9 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:58,274 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 7 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:58,824 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 8 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:59,365 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 5 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:41:59,858 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 6 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:00,298 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 4 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:00,873 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040214553900000074e8 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:01,692 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043906000000b0e0 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:02,119 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000003973 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:02,522 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000009481 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:03,121 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043850000000cafb (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:03,724 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043850000000f590 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:04,162 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043850000000180d (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:04,723 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000001b18 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:05,409 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000009464 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:06,000 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000009d89 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:06,781 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040604384900000070ac (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:07,317 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438490000001c19 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:07,967 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043848000000fda8 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:08,519 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043848000000fa79 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:09,213 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043754000000c09d (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:09,551 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043753000000e692 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:10,120 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043921000000d7a2 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:10,648 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060454290000008692 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:11,514 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060537350000003d95 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:11,908 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406053832000000bb64 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:12,444 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406053856000000640c (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:12,875 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060540020000005ea3 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:13,406 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060600190000008ecc (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:14,082 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406060929000000c2d0 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:14,517 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060611030000007859 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:15,216 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060610440000003fe6 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:15,680 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406063115000000ada8 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:16,158 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040607064000000055e1 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:16,644 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060706400000004f31 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:17,238 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406095946000000d506 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:17,836 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959450000008338 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:18,306 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959450000002524 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:18,767 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959440000004e14 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:19,361 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060959430000009c23 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:20,026 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket LOCAL-ALM-38 (Packet Loss) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:20,553 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406103653000000f70c (High CPU Usage) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:21,137 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604061054023289795bf1 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:21,740 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604061054043769998f5d (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:22,459 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604061059389611571673 (High CPU Usage) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:23,139 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604061059403140466b7c (Packet Loss) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:23,567 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406110255395706dc49 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:24,236 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406110421000000d68d (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:24,888 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406113101000000c946 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:25,286 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406113527528650d5d1 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:25,822 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407042348920765a41e (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:26,406 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040704405559949559d3 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:27,284 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070440556738382dfd (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:27,843 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407044303448172bafc (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:28,554 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070446211235158ae6 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:28,880 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070449433113938199 (High CPU Usage) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:29,454 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407044943501937bc9a (Packet Loss) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:29,871 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040704504808744715ed (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:30,375 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407045048162245b069 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:31,241 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604071022430000008178 (Hardware issues) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:31,588 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407045610765165810d (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:32,045 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070509458976805ac4 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:32,620 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407050946116543aea7 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:33,266 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040706020803934129b4 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:33,783 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070613510692368016 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:34,266 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407062334874431520e (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:34,661 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070840360000000b05 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:35,170 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070840360000004848 (SNMP) exceeded SLA. Escalated to Critical priority.
+INFO:     127.0.0.1:60054 - "GET /major-incidents/ HTTP/1.1" 200 OK
+2026-04-09 11:42:35,713 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407084035000000d2b3 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:36,220 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070840350000005937 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:36,683 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070844335829887a7b (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:37,108 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604070846428370274d95 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:37,529 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407145616000000b5dc (Hardware issues) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:38,035 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260407092912618962a030 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:38,380 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080358224542848cc6 (Link Failure) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:38,831 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408035823494353e182 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:39,530 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040803582371457001b6 (Temperature Warning) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:40,106 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080358244996389c3b (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:40,843 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408035824602799bc53 (Packet Loss) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:41,267 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080358253220681bb4 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:41,759 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408035825948843e99e (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:42,193 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408035826429591f26f (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:42,505 [INFO] cnms.dual_sync: [COMPANY] Synced 197 alarms, 173 tickets
+2026-04-09 11:42:42,506 [INFO] cnms.dual_sync: [COMPANY] Performing full deletion sync for LNMS-COMPANY-01...
+2026-04-09 11:42:42,618 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080358274221076f2f (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:43,100 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080427026459570852 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:43,489 [INFO] cnms.dual_sync: [DualPoller] Sync cycle complete.
+2026-04-09 11:42:43,609 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408102431000000a499 (Hardware issues) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:44,187 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408052109302408c6a7 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:42:44,551 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408092939394184c244 (ICMP) exceeded SLA. Escalated to Critical priority.
+INFO:     127.0.0.1:60454 - "GET /major-incidents/ HTTP/1.1" 200 OK
+2026-04-09 11:43:43,490 [INFO] cnms.dual_sync: [DualPoller] Sync cycle starting...
+2026-04-09 11:43:43,739 [INFO] cnms.dual_sync: [LOCAL] Connected to lnms_db ✓
+2026-04-09 11:43:44,986 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 2 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:45,788 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 73 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:46,607 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 74 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:46,945 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-61 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:47,298 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-62 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:47,833 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-63 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:48,436 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-64 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:49,080 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-65 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:49,513 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 68 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:49,989 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 69 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:50,716 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 70 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:51,560 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 71 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:51,916 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-53 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:52,914 [INFO] cnms.dual_sync: [LOCAL] Synced 33 alarms, 30 tickets
+2026-04-09 11:43:52,915 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-54 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:52,915 [INFO] cnms.dual_sync: [LOCAL] Performing full deletion sync for LNMS-LOCAL-01...
+2026-04-09 11:43:53,404 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-55 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:53,882 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-56 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:54,229 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-57 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:54,689 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-58 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:55,366 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-59 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:55,829 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket local-company-01-COMPANY-ALM-60 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:56,648 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-46 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:57,216 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-47 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:58,065 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-48 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:58,543 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 51 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:43:59,889 [INFO] cnms.dual_sync: [COMPANY] Connected via SSH ✓  alarms=197
+2026-04-09 11:44:00,986 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-50 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:01,698 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-51 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:03,125 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-52 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:03,481 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-37 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:03,951 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-38 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:04,314 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-39 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:04,717 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-40 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:05,062 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-42 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:05,430 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-43 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:05,688 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-44 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:06,033 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket COMPANY-ALM-45 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:06,244 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 33 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:06,438 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 34 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:06,843 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 36 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:06,960 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 37 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:07,080 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 38 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:07,341 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 39 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:07,913 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 26 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:08,380 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 27 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:08,789 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 28 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:09,310 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 29 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:09,793 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 30 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:10,055 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 31 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:10,298 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 32 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:10,865 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 21 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:11,289 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 22 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:11,435 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 23 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:11,578 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 24 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:11,744 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 25 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:11,794 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 13 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:12,144 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 14 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:12,570 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 15 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:12,844 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 16 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:13,233 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 17 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:13,690 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 18 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:14,037 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 10 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:14,477 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 11 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:14,903 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 12 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:15,228 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 9 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:15,587 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 7 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:16,029 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 8 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:16,379 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 5 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:16,796 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 6 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:17,163 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket 4 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:17,376 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040214553900000074e8 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:17,734 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043906000000b0e0 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:18,172 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000003973 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:18,447 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000009481 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:18,714 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043850000000cafb (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:19,057 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043850000000f590 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:19,810 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043850000000180d (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:20,202 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000001b18 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:20,543 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000009464 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:20,798 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438500000009d89 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:21,238 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040604384900000070ac (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:21,514 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060438490000001c19 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:22,001 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043848000000fda8 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:22,160 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043848000000fa79 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:22,402 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043754000000c09d (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:22,753 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043753000000e692 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:23,073 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406043921000000d7a2 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:23,523 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060454290000008692 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:23,932 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060537350000003d95 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:24,348 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406053832000000bb64 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:24,781 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406053856000000640c (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:25,302 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060540020000005ea3 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:25,648 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060600190000008ecc (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:26,034 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406060929000000c2d0 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:26,444 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060611030000007859 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:26,643 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060610440000003fe6 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:26,895 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260406063115000000ada8 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:27,273 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040607064000000055e1 (SNMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:27,773 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604060706400000004f31 (ICMP) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:28,150 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-202604080358224542848cc6 (Link Failure) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:28,520 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-2026040803582371457001b6 (Temperature Warning) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:28,966 [WARNING] cnms.sla_manager: 🚨 [SLA BREACHED] Ticket TKT-20260408035824602799bc53 (Packet Loss) exceeded SLA. Escalated to Critical priority.
+2026-04-09 11:44:34,316 [INFO] cnms.dual_sync: [COMPANY] Synced 197 alarms, 173 tickets
+2026-04-09 11:44:34,317 [INFO] cnms.dual_sync: [COMPANY] Performing full deletion sync for LNMS-COMPANY-01...
+INFO:     127.0.0.1:60828 - "GET /major-incidents/ HTTP/1.1" 200 OK
+2026-04-09 11:44:36,138 [INFO] cnms.dual_sync: [DualPoller] Sync cycle complete.
