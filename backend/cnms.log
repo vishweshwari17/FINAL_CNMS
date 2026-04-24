@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "start_server.py", line 14, in <module>
+    uvicorn.run("app.main:app", host="0.0.0.0", port=port, reload=False)
+  File "/home/nms/.local/lib/python3.6/site-packages/uvicorn/main.py", line 461, in run
+    server.run()
+  File "/home/nms/.local/lib/python3.6/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "start_server.py", line 9, in run
+    return loop.run_until_complete(coro)
+  File "/usr/lib64/python3.6/asyncio/base_events.py", line 484, in run_until_complete
+    return future.result()
+  File "/home/nms/.local/lib/python3.6/site-packages/uvicorn/server.py", line 74, in serve
+    config.load()
+  File "/home/nms/.local/lib/python3.6/site-packages/uvicorn/config.py", line 458, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/home/nms/.local/lib/python3.6/site-packages/uvicorn/importer.py", line 24, in import_from_string
+    raise exc from None
+  File "/home/nms/.local/lib/python3.6/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/lib64/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/nms/Downloads/FINAL_CNMS-main/backend/app/main.py", line 17, in <module>
+    from app.services.zabbix_poller import ZabbixPoller
+  File "/home/nms/Downloads/FINAL_CNMS-main/backend/app/services/zabbix_poller.py", line 22, in <module>
+    import aiohttp
+ModuleNotFoundError: No module named 'aiohttp'

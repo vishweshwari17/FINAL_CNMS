@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', 'Roboto', system-ui, sans-serif;
+  --font-display: 'Inter', 'Roboto', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+:root {
+  --blue-primary: #3b82f6;
+  --blue-header: linear-gradient(90deg, #1e3a8a 0%, #1e40af 100%);
+  --blue-sidebar-dark: #1e3a8a;
+  --blue-sidebar-light: #1e40af;
+  --blue-sidebar-text: #e2e8f0;
+  --blue-accent: #60a5fa;
+  --blue-text-dark: #dbeafe;
+
+  font-family: 'Inter', 'Roboto', system-ui, sans-serif;
+  letter-spacing: 0.2px;
+}
+
+html, body, button, input, select, textarea, table {
+  font-family: 'Inter', 'Roboto', system-ui, sans-serif;
+  letter-spacing: 0.2px;
+  scroll-behavior: smooth;
+}
+
+/* Global scrollbar hiding utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Ensure only vertical scrolling on body can have a scrollbar if browser default is preferred, 
+   but for this modern aesthetic, we often hide it everywhere or make it very subtle */
+body {
+  overflow-x: hidden;
+}
+
+/* Typography Scale */
+.text-page-title {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.text-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.text-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.text-table-header {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.text-body {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.text-badge {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.text-small {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6b7280;
+  letter-spacing: 0.2px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Inter', 'Roboto', system-ui, sans-serif;
+}
+
+/* Spacing and Layout Scale */
+.card {
+  padding: 16px;
+}
+
+.card-sm {
+  padding: 12px;
+}
+
+.card-lg {
+  padding: 20px;
+}
+
+.grid-layout {
+  display: grid;
+  gap: 16px;
+}
+
+.section {
+  margin-bottom: 16px;
+}
+
+.table-row-padded {
+  padding: 10px 12px;
+}
+
+.table-cell-padded {
+  padding: 8px 12px;
+}
+
+/* Interaction States */
+.sidebar-item:hover {
+  color: #ffffff;
+}
+
+.active-item {
+  background: rgba(255,255,255,0.12);
+  border-left: 3px solid var(--blue-accent);
+  color: #ffffff;
+}
+
+.main-content {
+  background: #f5f7fb;
+}
+
+/* Custom Micro-Interactions */
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px) rotate(-1deg); }
+  75% { transform: translateX(2px) rotate(1deg); }
+}
+
+.animate-nudge-shake {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(.33); opacity: 0; }
+  80%, 100% { opacity: 0; }
+  50% { opacity: .5; }
+}
+
+.pulse-ring-critical::before {
+  content: '';
+  position: absolute;
+  top: -100%; left: -100%; bottom: -100%; right: -100%;
+  background-color: rgba(239, 68, 68, 0.4);
+  border-radius: 100%;
+  animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  z-index: -1;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+.premium-shadow {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.premium-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 24px;
+}
+
+.scroll-reveal {
+  animation: slide-up 0.4s ease-out;
+}
+
+@keyframes slide-up {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

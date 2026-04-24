@@ -1,0 +1,165 @@
+import { useEffect, useState } from "react";
+import { getDashboardStats, getLnmsNodes, getTickets } from "../api/api";
+import { SevBadge, StatusBadge, NodeBadge, SlaBadge, fmt } from "../components/Badges";
+import { useNavigate } from "react-router-dom";
+import { RefreshCw, AlertTriangle } from "lucide-react";
+
+const SEV_ORDER = ["Critical","Major","Minor","Warning","Info"];
+const SEV_COLOR = { Critical:"#dc2626",Major:"#ea580c",Minor:"#ca8a04",Warning:"#2563eb",Info:"#94a3b8" };
+
+export default function Dashboard() {
+  const [stats, setStats]   = useState(null);
+  const [nodes, setNodes]   = useState([]);
+  const [tickets, setTickets] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  const load = async () => {
+    setLoading(true);
+    try {
+      const [s, n, t] = await Promise.all([getDashboardStats(), getLnmsNodes(), getTickets()]);
+      setStats(s.data); setNodes(n.data); setTickets(t.data);
+    } catch(e) { console.error(e); }
+    setLoading(false);
+  };
+
+  useEffect(() => { load(); }, []);
+
+  const tk = stats?.tickets || {};
+  const alarmSev = stats?.alarms_by_severity || {};
+  const byLnms   = stats?.tickets_by_lnms || {};
+  const totalAlarms = Object.values(alarmSev).reduce((a,b)=>a+b,0)||1;
+  const totalByLnms = Object.values(byLnms).reduce((a,b)=>a+b,0)||1;
+
+  return (
+    <div className="p-6 min-h-full">
+      <div className="flex items-center justify-between mb-6">
+        <div>
+          <h1 className="text-page-title text-slate-800">Dashboard</h1>
+          <p className="text-small mt-0.5">Network Operations Overview</p>
+        </div>
+        <button
+          onClick={load}
+          className="flex items-center gap-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-lg shadow-md transition-all active:scale-95"
+        >
+          <RefreshCw size={16} className={loading ? "animate-spin" : ""} />
+          Refresh
+        </button>
+      </div>
+ 
+      {/* SLA Alert Banner */}
+      {stats?.sla_compliance_perc < 95 && (
+        <div className="mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg flex items-center gap-3 animate-pulse">
+          <AlertTriangle className="text-red-500" size={20} />
+          <div>
+            <p className="text-badge font-bold text-red-800">SLA BREACH ALERT</p>
+            <p className="text-small text-red-600">Current compliance is at {stats?.sla_compliance_perc}%. Immediate action required on open tickets.</p>
+          </div>
+        </div>
+      )}
+
+      {/* LNMS Node Status */}
+      <div className="grid-layout grid-cols-2 mb-6">
+        {nodes.map(n => (
+          <div key={n.node_id} className="bg-white border border-gray-200 rounded-xl card-sm flex items-center gap-4 shadow-sm">
+            <div className={`w-3 h-3 rounded-full shrink-0 ${n.status==="CONNECTED"?"bg-green-400":"bg-red-400"}`}
+              style={n.status==="CONNECTED"?{boxShadow:"0 0 8px #4ade80"}:{}} />
+            <div className="flex-1 min-w-0">
+              <div className="text-card-title font-mono text-slate-800">{n.node_id}</div>
+              <div className="text-small">{n.location} · {n.ip_address}:{n.port}</div>
+            </div>
+            <span className={`text-badge font-semibold px-2 py-0.5 rounded-full border ${n.status==="CONNECTED"?"bg-green-50 text-green-700 border-green-200":"bg-red-50 text-red-700 border-red-200"}`}>
+              {n.status}
+            </span>
+          </div>
+        ))}
+      </div>
+      {/* KPIs */}
+      <div className="grid grid-cols-4 gap-4 mb-6">
+        {[
+          {label:"Open Tickets",  value:tk.OPEN||0,   color:"text-blue-600"},
+          {label:"Active Alarms", value:stats?.alarms?.ACTIVE||0, color:"text-red-600"},
+          {label:"SLA Compliance",value:`${stats?.sla_compliance_perc??100}%`, color:"text-green-600"},
+          {label:"System Urgency",value:stats?.priority_distribution?.Critical > 0 ? "CRITICAL" : "STABLE", color:stats?.priority_distribution?.Critical > 0 ? "text-red-700 animate-pulse" : "text-green-600"},
+        ].map(k => (
+          <div key={k.label} className="bg-white border border-gray-200 rounded-xl card-sm shadow-sm">
+            <div className="text-badge font-bold uppercase mb-1 text-slate-500">{k.label}</div>
+            <div className={`text-2xl font-semibold font-mono ${k.color}`}>{loading ? "—" : k.value}</div>
+          </div>
+        ))}
+      </div>
+ 
+      {/* Charts Row */}
+      <div className="grid-layout grid-cols-2 mb-6">
+        <div className="bg-white border border-gray-200 rounded-xl card shadow-sm">
+          <div className="text-badge text-gray-500 uppercase mb-4 font-bold">Alarms by Severity</div>
+          {SEV_ORDER.map(s => {
+            const c = alarmSev[s]||0;
+            return (
+              <div key={s} className="flex items-center gap-3 mb-3">
+                <div className="text-small w-20 shrink-0">{s}</div>
+                <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-full rounded-full transition-all duration-700"
+                    style={{width:`${(c/totalAlarms)*100}%`,background:SEV_COLOR[s]}} />
+                </div>
+                <div className="text-badge font-mono text-gray-500 w-5 text-right">{c}</div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="bg-white border border-gray-200 rounded-xl card shadow-sm">
+          <div className="text-badge text-gray-500 uppercase mb-4 font-bold">Operator Workload (Active Tickets)</div>
+          {Object.entries(stats?.operator_workload || {}).map(([node, count]) => {
+            const maxW = Math.max(...Object.values(stats?.operator_workload || {}), 1);
+            return (
+              <div key={node} className="flex items-center gap-3 mb-3">
+                <div className="text-small font-mono w-28 shrink-0 truncate">{node}</div>
+                <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-full rounded-full transition-all duration-700"
+                    style={{width:`${(count/maxW)*100}%`,background:"#7c3aed"}} />
+                </div>
+                <div className="text-badge font-mono text-gray-500 w-5 text-right">{count}</div>
+              </div>
+            );
+          })}
+          <div className="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center">
+            <div className="text-small">TCP messages today: <span className="font-mono font-semibold text-blue-600">{stats?.tcp_messages_today??0}</span></div>
+            <div className="text-badge font-bold uppercase opacity-70">Unified View Updated {new Date().toLocaleTimeString()}</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Recent Tickets */}
+      <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden mb-6">
+        <div className="px-4 py-3 border-b border-gray-100 flex items-center justify-between">
+          <h2 className="text-card-title text-slate-800 uppercase">Recent Tickets</h2>
+          <button onClick={()=>navigate("/tickets")} className="text-badge text-blue-600 hover:underline">View all &rarr;</button>
+        </div>
+        <table className="w-full text-left">
+          <thead className="bg-gray-50 text-table-header text-blue-700">
+            <tr>
+              {["ID","Title","LNMS Node","Device","Severity","Status","SLA","Created"].map(h=>(
+                <th key={h} className="table-cell-padded font-bold">{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-100">
+            {tickets.slice(0,6).map(t => (
+              <tr key={t.id} className="hover:bg-blue-50/50 cursor-pointer transition-colors"
+                onClick={()=>navigate(`/tickets/${t.id}`)}>
+                <td className="table-cell-padded text-body font-mono text-blue-600">{t.short_id}</td>
+                <td className="table-cell-padded text-body font-medium text-slate-800 max-w-45 truncate">{t.title}</td>
+                <td className="table-cell-padded"><NodeBadge nodeId={t.lnms_node_id} /></td>
+                <td className="table-cell-padded text-body font-mono text-gray-600">{t.device_name}</td>
+                <td className="table-cell-padded"><SevBadge severity={t.severity} /></td>
+                <td className="table-cell-padded"><StatusBadge status={t.status} /></td>
+                <td className="table-cell-padded"><SlaBadge used={t.sla_used} total={t.sla_minutes} status={t.status} /></td>
+                <td className="table-cell-padded text-small font-mono whitespace-nowrap">{fmt(t.created_at)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
