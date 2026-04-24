@@ -3,7 +3,13 @@ import {
   ShieldAlert, Clock, CheckCircle2, AlertTriangle, 
   ChevronRight, BarChart2, Download
 } from 'lucide-react';
+<<<<<<< HEAD
 import { getSlaRisk } from '../api/api';
+=======
+import axios from 'axios';
+
+const API_BASE = (import.meta.env.VITE_API_URL || "http://localhost:8001") + "/sla";
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 
 import { useNavigate } from 'react-router-dom';
 
@@ -14,7 +20,11 @@ const SLARisk = () => {
 
   const fetchRisk = async () => {
     try {
+<<<<<<< HEAD
       const res = await getSlaRisk();
+=======
+      const res = await axios.get(`${API_BASE}/risk`);
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
       setData(Array.isArray(res.data) ? res.data : []);
     } catch (err) {
       console.error("Failed to fetch SLA risk data", err);

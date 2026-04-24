@@ -5,7 +5,11 @@ import axios from "axios";
 import { getAuditLogs } from "../api/api";
 import { fmt } from "../components/Badges";
 
+<<<<<<< HEAD
 const API = (import.meta.env.VITE_API_URL || "http://localhost:8001") + "/api/admin";
+=======
+const API = (import.meta.env.VITE_API_URL || "http://localhost:8001") + "/admin";
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 
 // ── Toast ────────────────────────────────────────────────────────────────────
 function Toast({ toasts, remove }) {

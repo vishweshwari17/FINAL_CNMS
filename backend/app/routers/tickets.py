@@ -262,11 +262,14 @@ async def resolve_ticket(id: int, payload: dict = Body(...)):
         raise HTTPException(404, "Ticket not found")
 
     note = (payload.get("resolution_note") or "").strip()
+<<<<<<< HEAD
     # ── Resolution Note Enforcement ───────────────────────────
     if not note:
         log.info(f"Auto-generating resolution note for ticket {id}")
         note = f"Resolved by CNMS correlation engine. Root cause: {ticket.get('title', 'Unknown anomaly')}"
 
+=======
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
     await db.execute(
         """UPDATE tickets 
            SET status='RESOLVED', 
@@ -297,6 +300,7 @@ async def close_ticket(id: int):
     if not ticket:
         raise HTTPException(404, "Ticket not found")
 
+<<<<<<< HEAD
     # ── Resolution Note Enforcement ───────────────────────────
     if not ticket.get("resolution_note"):
         log.info(f"Auto-generating resolution note on close for ticket {id}")
@@ -306,6 +310,8 @@ async def close_ticket(id: int):
             (note, id)
         )
 
+=======
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
     await db.execute(
         "UPDATE tickets SET status='CLOSED', updated_at=NOW() WHERE id=%s",
         (id,),

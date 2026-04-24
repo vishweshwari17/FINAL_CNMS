@@ -2,7 +2,10 @@
 import json
 import logging
 import asyncio
+<<<<<<< HEAD
 from typing import List, Dict
+=======
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 from fastapi import WebSocket
 
 log = logging.getLogger("cnms.ws")
@@ -10,7 +13,11 @@ log = logging.getLogger("cnms.ws")
 
 class WebSocketManager:
     def __init__(self):
+<<<<<<< HEAD
         self._connections: List[WebSocket] = []
+=======
+        self._connections: list[WebSocket] = []
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 
     async def connect(self, ws: WebSocket):
         self._connections.append(ws)
@@ -21,7 +28,11 @@ class WebSocketManager:
             self._connections.remove(ws)
         log.info(f"[WS] Client disconnected. Total: {len(self._connections)}")
 
+<<<<<<< HEAD
     async def broadcast(self, data: Dict):
+=======
+    async def broadcast(self, data: dict):
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
         log.info(f"[WS] Broadcasting message to {len(self._connections)} clients")
         msg = json.dumps(data, default=str)
         

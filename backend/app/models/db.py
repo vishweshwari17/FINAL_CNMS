@@ -9,7 +9,12 @@ _pool: Optional[aiomysql.Pool] = None
 async def init_pool():
     global _pool
     _pool = await aiomysql.create_pool(
+<<<<<<< HEAD
         unix_socket = "/var/lib/mysql/mysql.sock",
+=======
+        host        = "127.0.0.1",
+        port        = 3306,
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
         user        = os.getenv("DB_USER",     "cnms_user"),
         password    = os.getenv("DB_PASSWORD", "cnms1234"),
         db          = os.getenv("DB_NAME",     "cnms_db"),

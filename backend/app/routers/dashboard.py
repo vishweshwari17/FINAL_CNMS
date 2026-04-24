@@ -9,6 +9,7 @@ Frontend reads:
   stats.tickets_by_lnms    → {"LNMS-MUM-01": 4, ...}
   stats.tcp_messages_today → int
 """
+<<<<<<< HEAD
 import logging
 from fastapi import APIRouter
 from app.models import db
@@ -27,6 +28,21 @@ async def debug_db_endpoint():
         return {"db": "connected", "count": res["c"]}
     except Exception as e:
         return {"db": "error", "message": str(e)}
+=======
+from fastapi import APIRouter
+from app.models import db
+from app.schemas import DashboardStats, IncidentStats
+
+router = APIRouter(tags=["Dashboard"])
+
+@router.get("/tcp-log")
+async def get_tcp_logs(limit: int = 50):
+    logs = await db.fetchall(
+        "SELECT id, lnms_node_id, direction, msg_type, status, created_at FROM tcp_sync_log ORDER BY id DESC LIMIT %s",
+        (limit,)
+    )
+    return logs
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 
 
 @router.get("/dashboard/stats", response_model=DashboardStats)
@@ -48,11 +64,15 @@ async def dashboard_stats():
     for r in await db.fetchall(
         "SELECT severity, COUNT(*) AS c FROM alarms WHERE status='ACTIVE' GROUP BY severity"
     ):
+<<<<<<< HEAD
         sev = r["severity"].title() if r["severity"] else "Info"
         if sev in alarms_by_severity:
             alarms_by_severity[sev] += r["c"]
         else:
             alarms_by_severity[sev] = r["c"]
+=======
+        alarms_by_severity[r["severity"]] = r["c"]
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 
     # Tickets grouped by LNMS node
     tickets_by_lnms: dict = {}
@@ -84,7 +104,11 @@ async def dashboard_stats():
     prio: dict = {"Critical": 0, "High": 0, "Medium": 0, "Low": 0}
     # Simple logic: merge ticket severity into 4 buckets
     for r in await db.fetchall("SELECT severity, COUNT(*) as c FROM tickets WHERE status != 'CLOSED' GROUP BY severity"):
+<<<<<<< HEAD
         s = r["severity"].title() if r["severity"] else "Minor"
+=======
+        s = r["severity"]
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
         if s == "Critical": prio["Critical"] += r["c"]
         elif s == "Major":   prio["High"]     += r["c"]
         elif s == "Minor":   prio["Medium"]   += r["c"]
@@ -101,6 +125,7 @@ async def dashboard_stats():
         priority_distribution=prio
     )
 
+<<<<<<< HEAD
 @router.get("/tcp-log")
 async def get_tcp_logs(limit: int = Query(50)):
     try:
@@ -161,6 +186,41 @@ async def get_incident_stats():
             WHERE is_deleted = 0
             ORDER BY created_at DESC
             LIMIT 10
+=======
+@router.get("/dashboard/incident-stats", response_model=IncidentStats)
+async def get_incident_stats():
+    try:
+        # Basic counts from correlation_incidents
+        counts = await db.fetchone("""
+            SELECT 
+                COUNT(CASE WHEN status = 'OPEN' THEN 1 END) as open_i,
+                COUNT(CASE WHEN status = 'RESOLVED' THEN 1 END) as res_i,
+                COUNT(CASE WHEN severity = 'Critical' AND status = 'OPEN' THEN 1 END) as crit_i
+            FROM correlation_incidents
+        """)
+
+        open_i = (counts["open_i"] or 0) if counts else 0
+        res_i  = (counts["res_i"]  or 0) if counts else 0
+        crit_i = (counts["crit_i"] or 0) if counts else 0
+
+        # Severity distribution
+        severity_dist: dict = {"Critical": 0, "Major": 0, "Minor": 0, "Info": 0}
+        rows = await db.fetchall(
+            "SELECT severity, COUNT(*) as c FROM correlation_incidents GROUP BY severity"
+        )
+        for r in rows:
+            sev = r.get("severity") or "Info"
+            if sev in severity_dist:
+                severity_dist[sev] = r["c"]
+
+        # Trend (last 7 days)
+        trend = await db.fetchall("""
+            SELECT DATE(created_at) as date, COUNT(*) as count 
+            FROM correlation_incidents 
+            WHERE created_at > NOW() - INTERVAL 7 DAY
+            GROUP BY DATE(created_at)
+            ORDER BY date ASC
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
         """)
 
         return {
@@ -168,6 +228,7 @@ async def get_incident_stats():
             "resolved_incidents":   res_i,
             "critical_incidents":   crit_i,
             "incidents_by_severity": severity_dist,
+<<<<<<< HEAD
             "incidents_trend": trend,
             "recent_incidents": recent
         }
@@ -182,4 +243,20 @@ async def get_incident_stats():
             "incidents_by_severity": {"Critical": 0, "Major": 0, "Minor": 0, "Info": 0},
             "incidents_trend": [],
             "recent_incidents": []
+=======
+            "incidents_trend": [
+                {"date": str(r["date"]), "count": str(r["count"])}
+                for r in trend
+            ],
+        }
+
+    except Exception:
+        # Table may not exist yet — return safe zero state
+        return {
+            "open_incidents":       0,
+            "resolved_incidents":   0,
+            "critical_incidents":   0,
+            "incidents_by_severity": {"Critical": 0, "Major": 0, "Minor": 0, "Info": 0},
+            "incidents_trend": [],
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
         }

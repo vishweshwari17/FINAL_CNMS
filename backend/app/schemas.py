@@ -94,6 +94,7 @@ class DashboardStats(BaseModel):
     operator_workload: Dict[str, int]    # node_id -> active (Open/ACK) tickets
     priority_distribution: Dict[str, int] # network-wide priority prediction
 
+<<<<<<< HEAD
 class Incident(BaseModel):
     id: int
     ticket_id: Optional[int] = None
@@ -103,13 +104,18 @@ class Incident(BaseModel):
     device_name: Optional[str] = None
     created_at: Optional[datetime] = None
 
+=======
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 class IncidentStats(BaseModel):
     open_incidents: int
     resolved_incidents: int
     critical_incidents: int
     incidents_by_severity: Dict[str, int]
     incidents_trend: List[Dict[str, str]] # [{"date": "2024-03-01", "count": 5}, ...]
+<<<<<<< HEAD
     recent_incidents: List[Incident] = []
+=======
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 
 
 # ── TCP sync log ─────────────────────────────────────────────

@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 import { useState, useEffect } from "react";
 import { getMajorIncidents } from "../api/api";
+=======
+import React, { useEffect, useState } from "react";
+import { getIncidents } from "../api/api";
+import axios from "axios";
+
+// CNMS specific API base for the new major-incidents endpoint
+const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:8001";
+
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 import { useNavigate } from "react-router-dom";
 import { 
   ShieldAlert, AlertCircle, Clock, ChevronRight, 
@@ -19,7 +29,11 @@ function MajorIncidents() {
 
   const fetchIncidents = async () => {
     try {
+<<<<<<< HEAD
       const res = await getMajorIncidents();
+=======
+      const res = await axios.get(`${API_BASE}/major-incidents/`);
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
       setIncidents(res.data);
     } catch (err) {
       console.error("Error loading major incidents", err);

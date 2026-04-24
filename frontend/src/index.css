@@ -22,6 +22,7 @@
 html, body, button, input, select, textarea, table {
   font-family: 'Inter', 'Roboto', system-ui, sans-serif;
   letter-spacing: 0.2px;
+<<<<<<< HEAD
   scroll-behavior: smooth;
 }
 
@@ -38,6 +39,8 @@ html, body, button, input, select, textarea, table {
    but for this modern aesthetic, we often hide it everywhere or make it very subtle */
 body {
   overflow-x: hidden;
+=======
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 }
 
 /* Typography Scale */

@@ -72,10 +72,17 @@ async def get_incidents(
     params = []
 
     if severity:
+<<<<<<< HEAD
         query += " AND UPPER(i.severity) = UPPER(%s)"
         params.append(severity)
     if status:
         query += " AND UPPER(i.status) = UPPER(%s)"
+=======
+        query += " AND i.severity = %s"
+        params.append(severity)
+    if status:
+        query += " AND i.status = %s"
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
         params.append(status)
     if device_name:
         query += " AND i.device_name LIKE %s"
@@ -92,11 +99,14 @@ async def get_incidents(
 
     items = await db.fetchall(query, params)
     
+<<<<<<< HEAD
     # Normalize severity in output
     for item in items:
         if item.get("severity"):
             item["severity"] = item["severity"].title()
     
+=======
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
     return {
         "items": items,
         "total": total,

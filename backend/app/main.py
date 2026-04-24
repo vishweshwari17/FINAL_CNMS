@@ -4,6 +4,10 @@ import logging
 from dotenv import load_dotenv
 load_dotenv()
 
+<<<<<<< HEAD
+=======
+from contextlib import asynccontextmanager
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -34,6 +38,7 @@ zabbix_poller = ZabbixPoller()
 # ===============================
 # 🚀 APP LIFECYCLE
 # ===============================
+<<<<<<< HEAD
 app = FastAPI(
     title="CNMS API",
     version="2.0.0",
@@ -43,6 +48,12 @@ app = FastAPI(
 @app.on_event("startup")
 async def startup_event():
     log.info("Starting CNMS backend...")
+=======
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    log.info("Starting CNMS backend...")
+
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
     await database.init_pool()
     log.info("[DB] Pool ready")
 
@@ -54,10 +65,18 @@ async def startup_event():
     poller.start()
     log.info("[DualPoller] Both LNMS sync started")
     
+<<<<<<< HEAD
+=======
+    # Start Zabbix Poller
+    # zabbix_poller.start()
+    # log.info("[ZabbixPoller] Started")
+    
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
     # Start SLA Manager
     sla_manager.start()
 
     # ✅ Start TCP Server (CNMS side)
+<<<<<<< HEAD
     asyncio.ensure_future(start_cnms_tcp_server("0.0.0.0", 7776))
     
     # ✅ Start Background Engine (RCA, LNMS Sync, SLA)
@@ -68,11 +87,35 @@ async def startup_event():
 async def shutdown_event():
     log.info("Shutting down...")
     await poller.stop()
+=======
+    server_task = asyncio.create_task(start_cnms_tcp_server("0.0.0.0", 7776))
+    log.info("[TCP] Server started on 7776")
+
+    yield
+
+    log.info("Shutting down...")
+    await poller.stop()
+    # await zabbix_poller.stop()
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
     await sla_manager.stop()
     await database.close_pool()
 
 
 # ===============================
+<<<<<<< HEAD
+=======
+# 🚀 FASTAPI INIT
+# ===============================
+app = FastAPI(
+    title="CNMS API",
+    version="2.0.0",
+    lifespan=lifespan,
+    redirect_slashes=True
+)
+
+
+# ===============================
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 # 🌐 CORS
 # ===============================
 app.add_middleware(
@@ -80,8 +123,13 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+<<<<<<< HEAD
         "http://localhost:5173",  # Vite default
         "http://127.0.0.1:5173"
+=======
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -93,6 +141,7 @@ app.add_middleware(
 # ===============================
 # 📦 ROUTERS
 # ===============================
+<<<<<<< HEAD
 app.include_router(nodes.router,          prefix="/api")
 app.include_router(alarms.router,         prefix="/api")
 app.include_router(devices.router,        prefix="/api")
@@ -104,6 +153,19 @@ app.include_router(incidents.router,      prefix="/api")
 app.include_router(sla_risk.router,       prefix="/api")
 app.include_router(major_incidents.router, prefix="/api")
 app.include_router(war_room.router,       prefix="/api")
+=======
+app.include_router(nodes.router)
+app.include_router(alarms.router)
+app.include_router(devices.router)
+app.include_router(tickets.router)
+app.include_router(dashboard.router)
+app.include_router(admin.router)
+app.include_router(webhook.router)
+app.include_router(incidents.router)
+app.include_router(sla_risk.router)
+app.include_router(major_incidents.router)
+app.include_router(war_room.router)
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 
 async def periodic_jobs():
     while True:
@@ -123,7 +185,10 @@ async def periodic_jobs():
 # ===============================
 @app.websocket("/ws/alarms")
 async def websocket_endpoint(ws: WebSocket):
+<<<<<<< HEAD
     log.info(f"[WS] Incoming connection request from {ws.client}")
+=======
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
     try:
         await ws.accept()
         # Log details AFTER acceptance to ensure handshake isn't delayed
@@ -131,6 +196,7 @@ async def websocket_endpoint(ws: WebSocket):
         log.info(f"[WS] Accepted connection from {ws.client} (Origin: {origin})")
         
         await ws_manager.connect(ws)
+<<<<<<< HEAD
         log.info(f"[WS] Client connected to manager. Current pool: {len(ws_manager._connections)}")
         while True:
             await ws.receive_text()
@@ -139,6 +205,14 @@ async def websocket_endpoint(ws: WebSocket):
         ws_manager.disconnect(ws)
     except Exception as e:
         log.error(f"[WS] Error in websocket loop for {ws.client}: {e}")
+=======
+        while True:
+            await ws.receive_text()
+    except WebSocketDisconnect:
+        ws_manager.disconnect(ws)
+    except Exception as e:
+        log.error(f"[WS] Error in websocket loop: {e}")
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
         ws_manager.disconnect(ws)
 
 

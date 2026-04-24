@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useEffect, useRef } from "react";
 import NotificationDropdown from "./NotificationDropdown";
 
@@ -6,11 +7,18 @@ export default function Header({ lnmsNodes = [], notificationCount = 0 }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
+=======
+import { useState, useEffect } from "react";
+
+export default function Header({ lnmsNodes = [] }) {
+  const [time, setTime] = useState(new Date());
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
   useEffect(() => {
     const t = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(t);
   }, []);
 
+<<<<<<< HEAD
   // Close dropdown on outside click
   useEffect(() => {
     function handleClickOutside(event) {
@@ -22,6 +30,8 @@ export default function Header({ lnmsNodes = [], notificationCount = 0 }) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+=======
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
   const connected = lnmsNodes.filter(n => n.status === "CONNECTED").length;
 
   return (
@@ -43,6 +53,7 @@ export default function Header({ lnmsNodes = [], notificationCount = 0 }) {
       <div className="flex-1" />
 
       <div className="flex items-center gap-6 mr-4">
+<<<<<<< HEAD
         <div className="relative" ref={dropdownRef}>
           <div 
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -63,6 +74,13 @@ export default function Header({ lnmsNodes = [], notificationCount = 0 }) {
           {isDropdownOpen && (
             <NotificationDropdown onClose={() => setIsDropdownOpen(false)} />
           )}
+=======
+        <div className="relative cursor-pointer group">
+          <div className="p-2.5 bg-blue-800/40 hover:bg-blue-700/60 rounded-xl border border-blue-600/30 transition-all shadow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-blue-100 group-hover:text-white transition-colors"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+          </div>
+          <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 border-2 border-blue-900 rounded-full flex items-center justify-center text-[10px] font-black text-white shadow-lg animate-bounce">2</span>
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
         </div>
       </div>
 

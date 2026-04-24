@@ -23,8 +23,13 @@ const IncidentsList = () => {
   const fetchIncidents = async () => {
     setLoading(true);
     try {
+<<<<<<< HEAD
       const res = await getIncidents(filter);
       setIncidents(res.data.items || []);
+=======
+      const data = await getIncidents(filter);
+      setIncidents(data.items || []);
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
     } catch (err) {
       console.error("Failed to fetch incidents:", err);
     } finally {
@@ -41,8 +46,13 @@ const IncidentsList = () => {
     setExpandedId(id);
     if (!childAlarms[id]) {
         try {
+<<<<<<< HEAD
             const res = await getIncidentAlarms(id);
             setChildAlarms(prev => ({ ...prev, [id]: res.data }));
+=======
+            const alarms = await getIncidentAlarms(id);
+            setChildAlarms(prev => ({ ...prev, [id]: alarms }));
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
         } catch (err) {
             console.error("Error fetching child alarms:", err);
         }

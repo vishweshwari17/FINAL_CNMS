@@ -5,11 +5,19 @@ import { useNavigate } from "react-router-dom";
 import { RefreshCw, Calendar, Search } from "lucide-react";
 
 export default function Alarms({ correlated = false }) {
+<<<<<<< HEAD
   const [alarms, setAlarms] = useState([]);
   const [nodes, setNodes] = useState([]);
   const [statusF, setStatusF] = useState("All");
   const [lnmsF, setLnmsF] = useState("ALL");
   const [sevF, setSevF] = useState("All");
+=======
+  const [alarms, setAlarms]   = useState([]);
+  const [nodes, setNodes]     = useState([]);
+  const [statusF, setStatusF] = useState("All");
+  const [lnmsF, setLnmsF]     = useState("ALL");
+  const [sevF, setSevF]       = useState("All");
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
   const [deviceF, setDeviceF] = useState("");
   const [startDateF, setStartDateF] = useState("");
   const [endDateF, setEndDateF] = useState("");
@@ -33,9 +41,15 @@ export default function Alarms({ correlated = false }) {
         getAlarms(params),
         getLnmsNodes()
       ]);
+<<<<<<< HEAD
       setAlarms(a.data || []);
       setNodes(n.data || []);
     } catch (e) { console.error(e); }
+=======
+      setAlarms(a.data || []); 
+      setNodes(n.data || []);
+    } catch(e){ console.error(e); }
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
     setLoading(false);
   };
 
@@ -46,10 +60,17 @@ export default function Alarms({ correlated = false }) {
     const newAlarm = e.detail;
     // Refresh the list to include the new alarm
     load();
+<<<<<<< HEAD
 
     // Highlight the new alarm row
     setHighlightedId(newAlarm.alarm_uid);
 
+=======
+    
+    // Highlight the new alarm row
+    setHighlightedId(newAlarm.alarm_uid);
+    
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
     // Reset highlight after 10 seconds, clearing any previous timeout
     if (highlightTimeoutRef.current) clearTimeout(highlightTimeoutRef.current);
     highlightTimeoutRef.current = setTimeout(() => {
@@ -78,7 +99,11 @@ export default function Alarms({ correlated = false }) {
     return true;
   });
 
+<<<<<<< HEAD
   const LNMS_COLOR = { "LNMS-MUM-01": "#2563eb", "LNMS-BLR-02": "#7c3aed" };
+=======
+  const LNMS_COLOR = { "LNMS-MUM-01":"#2563eb","LNMS-BLR-02":"#7c3aed" };
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 
   return (
     <div className="p-6 main-content min-h-screen">
@@ -87,34 +112,53 @@ export default function Alarms({ correlated = false }) {
           <h1 className="text-page-title text-slate-800">{correlated ? "Correlated Alarms" : "Incoming Alarms"}</h1>
           <p className="text-small text-gray-500 mt-0.5">Live sync from LNMS nodes · {filtered.length} alarms</p>
         </div>
+<<<<<<< HEAD
         <button
           onClick={load}
           className="flex items-center gap-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-lg shadow-md transition-all active:scale-95"
         >
           <RefreshCw size={16} className={loading ? "animate-spin" : ""} />
           Refresh
+=======
+        <button onClick={load} className="flex items-center gap-2 text-small text-gray-500 hover:text-blue-600 border border-gray-200 bg-white px-3 py-1.5 rounded-lg shadow-sm">
+          <RefreshCw size={14} className={loading?"animate-spin":""} /> Refresh
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
         </button>
       </div>
 
       {/* Filters Row 1: Status & Severity */}
       <div className="flex flex-wrap items-center gap-3 mb-3">
+<<<<<<< HEAD
         <div className="bg-white p-1 rounded-xl border border-gray-600 shadow-sm flex gap-1">
           {["All", "Active", "Resolved"].map(f => (
             <button key={f} onClick={() => setStatusF(f)}
               className={`px-3 py-1.5 rounded-lg text-small font-semibold transition-all ${statusF === f ? "bg-blue-200 text-white shadow-sm" : "text-gray -600 hover:bg-gray-50"}`}>
+=======
+        <div className="bg-white p-1 rounded-xl border border-gray-200 shadow-sm flex gap-1">
+          {["All","Active","Resolved"].map(f=>(
+            <button key={f} onClick={()=>setStatusF(f)}
+              className={`px-3 py-1.5 rounded-lg text-small font-semibold transition-all ${statusF===f?"bg-blue-600 text-white shadow-sm":"text-gray-600 hover:bg-gray-50"}`}>
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
               {f}
             </button>
           ))}
         </div>
         <div className="bg-white p-1 rounded-xl border border-gray-200 shadow-sm flex gap-1">
+<<<<<<< HEAD
           {["All", "Critical", "Major", "Minor", "Warning"].map(f => (
             <button key={f} onClick={() => setSevF(f)}
               className={`px-3 py-1.5 rounded-lg text-small font-semibold transition-all ${sevF === f ? "bg-blue-200 text-white shadow-sm" : "text-gray-600 hover:bg-gray-50"}`}>
+=======
+          {["All","Critical","Major","Minor","Warning"].map(f=>(
+            <button key={f} onClick={()=>setSevF(f)}
+              className={`px-3 py-1.5 rounded-lg text-small font-semibold transition-all ${sevF===f?"bg-blue-600 text-white shadow-sm":"text-gray-600 hover:bg-gray-50"}`}>
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
               {f}
             </button>
           ))}
         </div>
         <div className="ml-auto flex gap-1 bg-white p-1 rounded-xl border border-gray-200 shadow-sm">
+<<<<<<< HEAD
           {["ALL", ...nodes.map(n => n.node_id)].map(l => {
             const c = LNMS_COLOR[l] || "#475569";
             const isActive = lnmsF === l;
@@ -123,6 +167,16 @@ export default function Alarms({ correlated = false }) {
                 className={`px-3 py-1.5 rounded-lg text-badge font-mono font-bold border transition-all ${isActive ? 'text-white shadow-sm' : 'bg-transparent'}`}
                 style={{ borderColor: isActive ? c : c + '44', background: isActive ? c : 'transparent', color: isActive ? '#fff' : c }}>
                 {l === "ALL" ? "All Nodes" : l}
+=======
+          {["ALL",...nodes.map(n=>n.node_id)].map(l=>{
+            const c = LNMS_COLOR[l]||"#475569";
+            const isActive = lnmsF===l;
+            return (
+              <button key={l} onClick={()=>setLnmsF(l)}
+                className={`px-3 py-1.5 rounded-lg text-badge font-mono font-bold border transition-all ${isActive?'text-white shadow-sm':'bg-transparent'}`}
+                style={{borderColor:isActive?c:c+'44', background:isActive?c:'transparent', color:isActive?'#fff':c}}>
+                {l==="ALL"?"All Nodes":l}
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
               </button>
             );
           })}
@@ -132,7 +186,11 @@ export default function Alarms({ correlated = false }) {
       {/* Filters Row 2: Search & Dates */}
       <div className="flex flex-wrap items-center gap-3 mb-5 bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
         <div className="flex flex-col gap-1">
+<<<<<<< HEAD
           <span className="text-small font-bold text-gray-400 uppercase flex items-center gap-1"><Search size={10} /> Device Name</span>
+=======
+          <span className="text-small font-bold text-gray-400 uppercase flex items-center gap-1"><Search size={10}/> Device Name</span>
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
           <input
             placeholder="Search by hostname..."
             value={deviceF}
@@ -142,8 +200,13 @@ export default function Alarms({ correlated = false }) {
         </div>
 
         <div className="flex items-center gap-2 ml-auto bg-blue-50 p-2 rounded-lg border border-blue-100">
+<<<<<<< HEAD
           <div className="flex flex-col gap-1">
             <span className="text-small font-bold text-blue-400 uppercase flex items-center gap-1"><Calendar size={10} /> Raised From</span>
+=======
+           <div className="flex flex-col gap-1">
+            <span className="text-small font-bold text-blue-400 uppercase flex items-center gap-1"><Calendar size={10}/> Raised From</span>
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
             <input
               type="date"
               value={startDateF}
@@ -152,7 +215,11 @@ export default function Alarms({ correlated = false }) {
             />
           </div>
           <div className="flex flex-col gap-1">
+<<<<<<< HEAD
             <span className="text-small font-bold text-blue-400 uppercase flex items-center gap-1"><Calendar size={10} /> To</span>
+=======
+            <span className="text-small font-bold text-blue-400 uppercase flex items-center gap-1"><Calendar size={10}/> To</span>
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
             <input
               type="date"
               value={endDateF}
@@ -161,7 +228,11 @@ export default function Alarms({ correlated = false }) {
             />
           </div>
           {(startDateF || endDateF) && (
+<<<<<<< HEAD
             <button
+=======
+            <button 
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
               onClick={() => { setStartDateF(""); setEndDateF(""); }}
               className="mt-4 text-badge text-blue-600 font-bold hover:underline"
             >
@@ -175,17 +246,28 @@ export default function Alarms({ correlated = false }) {
         <table className="w-full text-left">
           <thead className="bg-gray-50 text-blue-700">
             <tr>
+<<<<<<< HEAD
               {["Alarm ID", "LNMS Node", "Device", "Type", "Severity", "Status", "Raised At", "Linked Ticket"].map(h => (
+=======
+              {["Alarm ID","LNMS Node","Device","Type","Severity","Status","Raised At","Linked Ticket"].map(h=>(
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
                 <th key={h} className="table-cell-padded text-table-header uppercase tracking-wide whitespace-nowrap">{h}</th>
               ))}
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
             {loading && <tr><td colSpan={8} className="px-4 py-8 text-center text-gray-400 text-sm">Loading…</td></tr>}
+<<<<<<< HEAD
             {!loading && filtered.length === 0 && <tr><td colSpan={8} className="px-4 py-8 text-center text-gray-400 text-sm">No alarms matching filter</td></tr>}
             {filtered.map(a => (
               <tr key={a.id} className={`hover:bg-blue-50 cursor-pointer transition-all duration-500 group ${highlightedId === a.alarm_uid ? "bg-yellow-100 ring-2 ring-yellow-400 ring-inset" : ""}`}
                 onClick={() => { if (a.alarm_uid) navigate(`/tickets?search=${a.alarm_uid}`); }}>
+=======
+            {!loading && filtered.length===0 && <tr><td colSpan={8} className="px-4 py-8 text-center text-gray-400 text-sm">No alarms matching filter</td></tr>}
+            {filtered.map(a => (
+              <tr key={a.id} className={`hover:bg-blue-50 cursor-pointer transition-all duration-500 group ${highlightedId === a.alarm_uid ? "bg-yellow-100 ring-2 ring-yellow-400 ring-inset" : ""}`}
+                onClick={()=>{ if(a.alarm_uid) navigate(`/tickets?search=${a.alarm_uid}`); }}>
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
                 <td className="table-cell-padded text-badge font-mono text-blue-600 group-hover:underline">
                   {highlightedId === a.alarm_uid && <span className="inline-block w-2 h-2 bg-yellow-500 rounded-full mr-1 animate-ping"></span>}
                   {a.alarm_uid}

@@ -82,7 +82,11 @@ export default function Sidebar({ incidentsCount = 0, criticalAlarmsCount = 0 })
         </button>
       </div>
 
+<<<<<<< HEAD
       <nav className="px-3 py-8 space-y-1 flex-1 overflow-y-auto no-scrollbar">
+=======
+      <nav className="px-3 py-8 space-y-1 flex-1 overflow-y-auto custom-scrollbar-sidebar">
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
         
         <CollapsibleSection label="Command" Icon={LayoutDashboard} defaultOpen={true}>
           <NavLink to="/war-room"    label="NOC Command"   Icon={ShieldAlert} />
@@ -121,6 +125,15 @@ export default function Sidebar({ incidentsCount = 0, criticalAlarmsCount = 0 })
               </div>
           )}
       </div>
+<<<<<<< HEAD
+=======
+
+      <style>{`
+        .custom-scrollbar-sidebar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar-sidebar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar-sidebar::-webkit-scrollbar-thumb { background: #60a5fa; border-radius: 10px; }
+      `}</style>
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
     </div>
   );
 }

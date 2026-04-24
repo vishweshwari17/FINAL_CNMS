@@ -24,7 +24,11 @@ async def get_alarms(
 ):
     where, args = ["1=1"], []
     if status == "Active":
+<<<<<<< HEAD
         where.append("status IN ('OPEN', 'ACK', 'ACTIVE') AND is_active = 1")
+=======
+        where.append("status IN ('OPEN', 'ACK', 'ACTIVE')")
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
     elif status == "Resolved":
         where.append("status IN ('RESOLVED', 'CLOSED')")
     elif status and status != "All":

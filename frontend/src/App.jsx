@@ -25,11 +25,16 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function AppContent() {
   const [lnmsNodes, setLnmsNodes] = useState([]);
+<<<<<<< HEAD
   const [counts, setCounts] = useState({ incidents: 0, criticalAlarms: 0, totalNotifications: 0 });
+=======
+  const [counts, setCounts] = useState({ incidents: 0, criticalAlarms: 0 });
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
   const navigate = useNavigate();
 
   const seenAlarms = useRef(new Set());
 
+<<<<<<< HEAD
   const fetchCounts = useCallback(async () => {
     try {
       const [incRes, almRes, statsRes] = await Promise.all([
@@ -99,22 +104,99 @@ function AppContent() {
 
       // Re-fetch counts for any relevant WebSocket update
       fetchCounts();
+=======
+  const handleWebSocketMessage = useCallback((data) => {
+    if (data.type === "NEW_ALARM") {
+      const { alarm } = data;
+      
+      // Prevent duplicate notifications
+      if (seenAlarms.current.has(alarm.alarm_uid)) return;
+      seenAlarms.current.add(alarm.alarm_uid);
+      
+      // Keep set size manageable (last 100 alarms)
+      if (seenAlarms.current.size > 100) {
+        const first = seenAlarms.current.values().next().value;
+        seenAlarms.current.delete(first);
+      }
+
+      // Sound for Critical
+      if (alarm.severity === "Critical") {
+        const audio = new Audio("https://www.soundjay.com/buttons/beep-01a.mp3");
+        audio.play().catch(() => {});
+      }
+
+      // Dispatch custom event for Alarms page to highlight row
+      window.dispatchEvent(new CustomEvent("NEW_ALARM_RECEIVED", { detail: alarm }));
+
+      // Map severity to Toast types/colors
+      const toastConfig = {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+      };
+
+      const toastContent = (
+        <div onClick={() => navigate(`/tickets?search=${alarm.alarm_uid}`)} className="cursor-pointer">
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-badge uppercase">{alarm.severity} ALARM</span>
+          </div>
+          <div className="text-sm font-semibold mt-1">{alarm.alarm_name}</div>
+          <div className="text-badge opacity-90 mt-1">Device: {alarm.device_name}</div>
+        </div>
+      );
+
+      // Trigger standard toast with custom theme colors
+      if (alarm.severity === "Critical") toast.error(toastContent, toastConfig);
+      else if (alarm.severity === "Major") toast.warning(toastContent, { ...toastConfig, style: { background: '#f97316' } });
+      else if (alarm.severity === "Minor") toast.info(toastContent, { ...toastConfig, style: { background: '#eab308' } });
+      else toast.info(toastContent, { ...toastConfig, style: { background: '#3b82f6' } });
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
     }
 
     // Refresh nodes list
     getLnmsNodes().then(r => setLnmsNodes(r.data)).catch(() => {});
+<<<<<<< HEAD
   }, [navigate, fetchCounts]);
+=======
+  }, [navigate]);
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 
   useAlarmWebSocket(handleWebSocketMessage);
 
   useEffect(() => {
     getLnmsNodes().then(r => setLnmsNodes(r.data)).catch(()=>{});
+<<<<<<< HEAD
     fetchCounts();
   }, [fetchCounts]);
 
   return (
     <div className="flex flex-col h-screen overflow-hidden text-slate-800 main-content">
       <Header lnmsNodes={lnmsNodes} notificationCount={counts.totalNotifications} />
+=======
+    // Fetch initial counts
+    const fetchCounts = async () => {
+      try {
+        const [incRes, almRes] = await Promise.all([
+          import("./api/api").then(m => m.getIncidents({ status: "OPEN" })),
+          import("./api/api").then(m => m.getAlarms({ severity: "Critical", status: "Active" }))
+        ]);
+        setCounts({
+          incidents: incRes.data.total || incRes.data.items?.length || 0,
+          criticalAlarms: almRes.data.length || 0
+        });
+      } catch {} // eslint-disable-line no-empty
+    };
+    fetchCounts();
+  }, []);
+
+  return (
+    <div className="flex flex-col h-screen overflow-hidden text-slate-800 main-content">
+      <Header lnmsNodes={lnmsNodes} />
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
       <div className="flex flex-1 overflow-hidden">
         <Sidebar 
           incidentsCount={counts.incidents} 

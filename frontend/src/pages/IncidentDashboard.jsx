@@ -20,8 +20,12 @@ const IncidentDashboard = () => {
 
   const fetchStats = async () => {
     try {
+<<<<<<< HEAD
       const res = await getIncidentStats();
       const data = res.data;
+=======
+      const data = await getIncidentStats();
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
       setStats(data);
       // Mock or fetch recent incidents if available in stats
       setRecentIncidents(data.recent_incidents || []);

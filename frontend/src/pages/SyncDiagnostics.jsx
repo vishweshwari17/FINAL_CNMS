@@ -36,9 +36,15 @@ export default function SyncDiagnostics() {
 
         <button
           onClick={load}
+<<<<<<< HEAD
           className="flex items-center gap-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-lg shadow-md transition-all active:scale-95"
         >
           <RefreshCw size={16} className={loading ? "animate-spin" : ""} />
+=======
+          className="flex items-center gap-2 text-small text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg shadow transition"
+        >
+          <RefreshCw size={14} className={loading ? "animate-spin" : ""} />
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
           Refresh
         </button>
       </div>

@@ -38,12 +38,17 @@ export default function Dashboard() {
           <h1 className="text-page-title text-slate-800">Dashboard</h1>
           <p className="text-small mt-0.5">Network Operations Overview</p>
         </div>
+<<<<<<< HEAD
         <button
           onClick={load}
           className="flex items-center gap-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-lg shadow-md transition-all active:scale-95"
         >
           <RefreshCw size={16} className={loading ? "animate-spin" : ""} />
           Refresh
+=======
+        <button onClick={load} className="flex items-center gap-2 text-badge text-gray-500 hover:text-blue-600 border border-gray-200 bg-white px-3 py-1.5 rounded-lg transition-all">
+          <RefreshCw size={14} className={loading?"animate-spin":""} /> Refresh
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
         </button>
       </div>
  

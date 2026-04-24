@@ -62,9 +62,15 @@ export default function Devices() {
           <div className="flex bg-white p-1.5 rounded-2xl shadow-sm border border-slate-200">
             <button 
               onClick={load}
+<<<<<<< HEAD
               className="flex items-center gap-2 px-5 py-2 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition-all active:scale-95 rounded-l-xl shadow-sm"
             >
               <RefreshCw size={16} className={loading ? "animate-spin" : ""} /> Sync
+=======
+              className="flex items-center gap-2 px-4 py-2 text-small font-bold text-slate-500 hover:text-indigo-600 transition-colors uppercase border-r border-slate-100"
+            >
+              <RefreshCw size={14} className={loading ? "animate-spin" : ""} /> Sync
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
             </button>
             <button className="flex items-center gap-2 px-4 py-2 text-small font-bold text-slate-500 hover:text-indigo-600 transition-colors uppercase">
               <Download size={14} /> Export

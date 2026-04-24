@@ -1,7 +1,11 @@
 import axios from "axios";
 
 // Base URL: LNMS on 8000, fallback if not set
+<<<<<<< HEAD
 const BASE = (import.meta.env.VITE_API_URL || "http://localhost:8001") + "/api";
+=======
+const BASE = import.meta.env.VITE_API_URL || "http://localhost:8001";
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 
 const API = axios.create({
   baseURL: BASE
@@ -23,8 +27,11 @@ export const getWarRoomData      = ()           => API.get("/war-room/");
 export const getClusterDetails    = (id)         => API.get(`/war-room/clusters/${id}`);
 export const acknowledgeIncident = (id)         => API.put(`/war-room/incidents/${id}/acknowledge`);
 export const resolveIncident     = (id)         => API.put(`/war-room/incidents/${id}/resolve`);
+<<<<<<< HEAD
 export const getMajorIncidents   = ()           => API.get("/major-incidents/");
 export const getSlaRisk         = ()           => API.get("/sla/risk");
+=======
+>>>>>>> c479efac988271e703a2f56f5bee5c6883f6234c
 
 // Tickets (CNMS unified)
 export const getTickets        = (params={}) => API.get("/tickets", { params });
